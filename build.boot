@@ -1,5 +1,5 @@
 (def project 'boot-nightlight-lib-template/boot-template)
-(def version "0.1.1")
+(def version "0.1.5")
 
 (set-env! :resource-paths #{"resources" "src"}
           ;; uncomment this if you write tests for your template:
@@ -14,9 +14,10 @@
                                           :password (System/getenv "CLOJARS_PASS")}]))
 
 (task-options!
+ jar {:main 'boot.new.boot-nightlight-lib-template.core}
  pom {:project     project
       :version     version
-      :description "Template for clojure libraries with nightlight by default."
+      :description "Template for clojure libraries with nightlight and boot by default."
       :url         "https://github.com/hswick/boot-nightlight-lib-template"
       :scm         {:url "https://github.com/hswick/boot-nightlight-lib-template"}
       :license     {"Eclipse Public License"
@@ -36,3 +37,8 @@
 
 (require '[adzerk.boot-test :refer [test]]
          '[boot.new :refer [new]])
+
+(deftask build
+  "Build and install the project locally."
+  []
+  (comp (pom) (jar) (install)))

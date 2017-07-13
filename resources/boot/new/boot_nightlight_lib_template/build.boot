@@ -9,7 +9,7 @@
                               	  :password (System/getenv "CLOJARS_PASS")}]))
 
 (task-options!
-	jar {:main '{{name}}.core)
+	jar {:main '{{name}}.core
 		 :manifest {"Description" "Clojure library meant to do..."}}
 	pom {:version "0.0.1"
 		 :project 'author/{{name}}
@@ -39,7 +39,7 @@
 
 (deftask testing [] (merge-env! :source-paths #{"test"}) identity)
 
-(deftask run-tests
+(deftask test-code
 	[]
 	(comp
 		(testing)

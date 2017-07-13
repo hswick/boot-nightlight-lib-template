@@ -1,9 +1,9 @@
 (ns boot.new.boot-nightlight-lib-template
   (:require [boot.new.templates :refer [renderer name-to-path ->files]]))
 
-(def render (renderer "boot-nightlight-template"))
+(def render (renderer "boot-nightlight-lib-template"))
 
-(defn boot-nightlight-template
+(defn boot-nightlight-lib-template
   "Input project name to create nightlight boot template"
   [name]
   (let [data {:name name
