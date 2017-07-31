@@ -14,4 +14,5 @@
              ["build.boot" (render "build.boot" data)]
              [".gitignore" (render ".gitignore" data)]
              ["README.MD" (render "README.MD" data)]
-             ["test/{{sanitized}}/test.clj" (render "test.clj" data)])))
+             ["test/{{sanitized}}/test.clj" (render "test.clj" data)]
+             ["LICENSE" (render "LICENSE" data)])))

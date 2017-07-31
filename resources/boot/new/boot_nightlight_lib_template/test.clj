@@ -1,2 +1,2 @@
-(ns {{name}}.core
+(ns {{name}}.test
 	(:require [clojure.test :refer :all]))
